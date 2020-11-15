@@ -10,11 +10,7 @@ const Td = styled.td
 `;
 
 export default class Coin extends Component {
-    constructor(props){
-        super(props);
-        this.handeClick = this.handeClick.bind(this);     
-        
-    }
+    
     /* 
     componentDidMount(){
         const callback =() => {
@@ -30,26 +26,22 @@ export default class Coin extends Component {
         setInterval(callback, 1000);
     }
     */
-    handeClick(event){
+    handeClick = (event) => {
         //Prevent the default action of submitting the form
         event.preventDefault();
 
-        this.props.handleRefresh(this.props.ticker);
-        /*
-        const randomPercentage = 0.995 + Math.random() * 0.01;
-        this.setState( function(oldState){
-            return{
-                price: oldState.price * randomPercentage
-            };
-        });
-        */
+        this.props.handleRefresh(this.props.ticker);         
     }
+
     render() {
+        const balanceRow = this.props.showBalance ? <Td>{this.props.balance}</Td> : null;
         return(            
             <tr>            
               <Td>{this.props.name}</Td>
               <Td>{this.props.ticker}</Td>
-              <Td>${this.props.price}</Td>
+              <Td>${this.props.price}</Td> 
+              {balanceRow}
+                           
               <Td>
                   <form action="#" method="POST">
                       <button onClick={this.handeClick}>Refresh</button>
