@@ -1,9 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Coin from './components/Coin/Coin';
-import AccountBalance from './components/AccountBalance/AccountBalance.jsx'
 
+//import './App.css';
+import Header from './components/Header/Header';
+import CoinList from './components/CoinList/CoinList';
+import AccountBalance from './components/AccountBalance/AccountBalance';
+import styled from 'styled-components';
+
+const DivApp = styled.div
+`
+  text-align: center;
+  background-color: rgb(78, 59, 97);
+  color: #cccccc;
+`;
 
 class App extends React.Component {
   constructor(props){
@@ -41,34 +49,33 @@ class App extends React.Component {
   }
   render(){
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">
-            Coin Exchange 
-          </h1>
-        </header> 
+      <DivApp>      
+        <Header />
         <AccountBalance amount={this.state.balance} />
-        <table className="coin-table">
-          <thead>
-            <tr>
-              <th>Name:</th>
-              <th>Ticker:</th>
-              <th>Price:</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              this.state.coinData.map( ({name, ticker, price}) => 
-                <Coin key={ticker} name={name}  ticker={ticker} price={price} />
-              )
-            }
-         
-          </tbody>
-        </table>   
-      </div>
+        <CoinList coinData={this.state.coinData} />   
+      </DivApp>
     );
   }
+
+
+/*
+<table className="coin-table">
+                <thead>
+                    <tr>
+                        <th>Name:</th>
+                        <th>Ticker:</th>
+                        <th>Price:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        this.state.coinData.map( ({name, ticker, price}) => 
+                            <Coin key={ticker} name={name}  ticker={ticker} price={price} />
+                        )
+                    }                    
+                </tbody>
+            </table>    */
+
   /*
   key={value.ticker} -- Unique key or use uuid package
   {
