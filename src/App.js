@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import Header from './components/Header/Header';
 import CoinList from './components/CoinList/CoinList';
 import AccountBalance from './components/AccountBalance/AccountBalance';
@@ -22,22 +22,6 @@ function App(props) {
     const [showBalance, setShowBalance] = useState(true);
     const [coinData,setCoinData] = useState([]);
     
-    /* or 
-        (Becareful to overwite variable state) 
-        create a copy of variables ( ...oldstate)
-        overwrite variable for new valuable (11200)
-       --- Just because we have a helicopter money ;p ---
-    */
-    /*
-    const [state, setState] =useState({
-      balance: 10000,
-      showBalance: true,
-      coinData: []
-    });
-    setState(oldState =>({...oldState, balance: 112000}));
-    */
-    
-     
 
     const componentDidMount = async () => {
       const response = await axios.get('https://api.coinpaprika.com/v1/coins')    
@@ -58,6 +42,18 @@ function App(props) {
       //Retrive the prices        
       setCoinData(coinPriceData);
     }   
+
+    useEffect(function(){
+      if(coinData.length === 0){
+        // component did mount
+        componentDidMount();
+      }else{
+        // component did update
+      }
+    });
+     
+
+    
 
     const handleRefresh = async (valueChangeId) => {     
       const tickerUrl = `https://api.coinpaprika.com/v1/tickers/${valueChangeId}`;
