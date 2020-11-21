@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/coin-reactJS/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/coin-reactJS/static/js/main.79a3c5d7.chunk.js",
+    "main.js.map": "/coin-reactJS/static/js/main.79a3c5d7.chunk.js.map",
+    "runtime-main.js": "/coin-reactJS/static/js/runtime-main.cb231637.js",
+    "runtime-main.js.map": "/coin-reactJS/static/js/runtime-main.cb231637.js.map",
+    "static/js/2.56160517.chunk.js": "/coin-reactJS/static/js/2.56160517.chunk.js",
+    "static/js/2.56160517.chunk.js.map": "/coin-reactJS/static/js/2.56160517.chunk.js.map",
+    "static/js/3.f9751cb6.chunk.js": "/coin-reactJS/static/js/3.f9751cb6.chunk.js",
+    "static/js/3.f9751cb6.chunk.js.map": "/coin-reactJS/static/js/3.f9751cb6.chunk.js.map",
+    "index.html": "/coin-reactJS/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/coin-reactJS/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.56160517.chunk.js.LICENSE.txt": "/coin-reactJS/static/js/2.56160517.chunk.js.LICENSE.txt",
+    "static/media/logo.103b5fa1.svg": "/coin-reactJS/static/media/logo.103b5fa1.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cb231637.js",
+    "static/js/2.56160517.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.79a3c5d7.chunk.js"
+  ]
+}
